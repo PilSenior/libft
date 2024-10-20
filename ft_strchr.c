@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htekdemi@student.42kocaeli.com.tr <htek    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 16:00:03 by htekdemi@st       #+#    #+#             */
-/*   Updated: 2024/10/20 18:09:21 by htekdemi@st      ###   ########.fr       */
+/*   Created: 2024/10/20 18:32:16 by htekdemi@st       #+#    #+#             */
+/*   Updated: 2024/10/20 18:40:07 by htekdemi@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
-int ft_toupper(int c)
+
+char	*ft_strchr(const char *s, int c)
 {
-	if(c >= 'a' && c <= 'z')
-		return(c - 32);
-		
-	return(c);
+	int	s_len;
+
+	s_len = ft_strlen(s);
+	while (s_len >= 0)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+		s_len--;
+	}
+	return (NULL);
 }
 
 int main()
 {
-	printf("%d", ft_toupper('b'));
+	char a[] = "abcde";
+	printf("%s", ft_strchr(a, 4));
 }
