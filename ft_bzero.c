@@ -1,18 +1,24 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: htekdemi@student.42kocaeli.com.tr <htek    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/20 15:39:16 by htekdemi@st       #+#    #+#             */
+/*   Updated: 2024/10/20 15:56:11 by htekdemi@st      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
- void *ft_bzero(void *s, size_t n)
- {
-	unsigned char *p = (unsigned char *)s;
-	while(n--)
+#include <stddef.h>
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*p;
+
+	p = (unsigned char *)s;
+	while (n--)
 	{
-		*p++ = '0';
+		*p++ = 0;
 	}
-	return(s);
- }
-
- int main()
- {
-	char a[] = "emirhan";
-	printf("%s", ft_bzero(a, 4));
- }
+}
