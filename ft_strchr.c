@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -26,10 +25,4 @@ char	*ft_strchr(const char *s, int c)
 		s_len--;
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char a[] = "abcde";
-	printf("%s", ft_strchr(a, 4));
 }

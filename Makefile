@@ -1,5 +1,5 @@
 NAME = libft.a
-FLAG = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 SRC = $(shell find . -name "ft_*.c")
 OBJ = $(SRC:.c=.o)
 
@@ -9,7 +9,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c
-	gcc $(FLAG) -c $< -o $@
+	gcc $(FLAGS) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
@@ -18,4 +18,5 @@ clean:
 fclean: clean
 	/bin/rm -f $(NAME)
 	@echo "aldı"
-re: fclean allcl
+
+re: fclean all

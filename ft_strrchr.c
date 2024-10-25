@@ -10,31 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
-    i = ft_strlen(s);
+	int	i;
 
-    if(c == '\0')
-        return(char *)s;
-    
-    while (i >= 0)
-    {
-        if(s[i] == (char)c)
-            return(char *)(s + i);
-        
-        i--;
-    }
-    return('\0');
-    
-}
-
-int main()
-{
-    char b[] = "emirhan";
-    int a = 'r';
-    printf("%s", ft_strrchr(b,a));
+	i = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)s);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
+	}
+	return (NULL);
 }

@@ -12,32 +12,24 @@
 
 #include <stdio.h>
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *r = (unsigned char *)dst;
-	unsigned char *t = (unsigned char *)src;
+	unsigned char	*r;
+	unsigned char	*t;
 
-	if(r < t && r < t - len)
+	r = (unsigned char *)dst;
+	t = (unsigned char *)src;
+	if (r < t && r < t + len)
 	{
 		r += len;
 		t += len;
-		while(len--){
+		while (len--)
 			*(--r) = *(--t);
-		} 
 	}
-	else{
-		while(len--)
-		{
+	else
+	{
+		while (len--)
 			*r++ = *t++;
-		}
 	}
-	return(dst);
-
-}
-
-int main()
-{
-	char a[20] = "okul";
-	char b[20] = "benim";
-	printf("%s", ft_memmove(a, b, 4)); 
+	return (dst);
 }

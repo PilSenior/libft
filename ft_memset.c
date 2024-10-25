@@ -12,10 +12,12 @@
 
 #include <stdio.h>
 
-void *ft_memset(void *ptr, int value, int num) {
-    unsigned char *p = (unsigned char *)ptr;
-    while (num--) {
-        *p++ = value;
-    }
-    return(ptr);
+void	*ft_memset(void *ptr, int value, size_t num)
+{
+	unsigned char	*p;
+
+	p = (unsigned char *)ptr;
+	while (num--)
+		*p++ = (unsigned char)value;
+	return (ptr);
 }
