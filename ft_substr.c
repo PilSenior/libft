@@ -3,46 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yakdik <yakdik@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: htekdemi@student.42kocaeli.com.tr <htek    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 22:54:30 by yakdik            #+#    #+#             */
-/*   Updated: 2022/12/20 14:48:18 by yakdik           ###   ########.fr       */
+/*   Created: 2024/10/31 14:20:31 by htekdemi@st       #+#    #+#             */
+/*   Updated: 2024/10/31 14:20:31 by htekdemi@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*str;
-	char	*src;
+	size_t	s_len;
 
-	src = (char *)s;
-	if (!src)
+	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	s_len = ft_strlen(s);
+	if (start >= s_len)
 	{
 		str = (char *)malloc(sizeof(char));
 		if (!str)
 			return (NULL);
-		*str = '\0';
+		str[0] = '\0';
+		return (str);
 	}
-	else
-	{
-		if ((ft_strlen(s) - start) < len)
-			len = ft_strlen(s) - start;
-		str = (char *)malloc((sizeof(char) * len) + 1);
-		if (!str)
-			return (NULL);
-		ft_strlcpy(str, (char *)(s + start), len + 1);
-	}
+	if ((s_len - start) < len)
+		len = s_len - start;
+	str = (char *)malloc((sizeof(char) * len) + 1);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
 
-int main()
+int	main(void)
 {
-	char *result = ft_substr("Hello World", 0, 12);
-	printf("%s\n", result);  // Çıktı: "World"
+	char	*result;
 
+	result = ft_substr("Hello World", 0, 12);
+	printf("%s\n", result);
+	free(result);
+	return (0);
 }
