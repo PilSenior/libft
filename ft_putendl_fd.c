@@ -10,18 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	len;
-
-	len = 0;
-	while (s[len] != '\0')
-	{
-		write(fd, &s[len], 1);
-		if (s[len + 1] == '\0')
-			write(fd, "\n", 1);
-		len++;
-	}
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

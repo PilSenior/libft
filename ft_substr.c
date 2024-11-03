@@ -39,12 +39,3 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	return (str);
 }
 
-int	main(void)
-{
-	char	*result;
-
-	result = ft_substr("Hello World", 0, 12);
-	printf("%s\n", result);
-	free(result);
-	return (0);
-}
