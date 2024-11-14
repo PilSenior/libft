@@ -1,1 +1,30 @@
 Francinette
+*ft_atoi
+	ft_atoi temel biçimde göderilen stringi derleyen fonksiyondur gönderilen operatör eğer birden fazlaysa null döndürür recursive mantığı vardır stringi tek tek işler ve fonksiyonda döndürür
+	baştaki boşlukları ve boşluk karakterlerini atlar.
+----------------------------------------------------------------------
+*ft_bzero
+	gönderilen karakteri belirli n sayısı kadar 0 olarak değiştirir tersten sayma yapar n i düşürür.
+	----------------------------------------------------------------------
+*ft_calloc
+	void bir fonksiyondur "*ft_calloc(size_t count, size_t size)" fonksiyon bu şekildedir malloc ile count ve size çarpımı kadar yer ayırır ve bzero yu çağırır 
+	count ve size kadar yer kullanır ve malloctaki ayrılan belleği sıfırlar.
+	----------------------------------------------------------------------
+*ft_ısalpha
+	gönderilen karakter alfabetik bir karakterse 1 değilse 0 döndürür.
+	----------------------------------------------------------------------
+*ft_isalnum
+	gönderilen karakter alfabetik ve numarik bir karakterse 1 değilse 0 döndürür.
+----------------------------------------------------------------------
+*ft_isascii
+	karakter ascii tablosu içinde bir ifadeye karşılık geliyorsa 1 değilse 0 döndürür.
+----------------------------------------------------------------------
+*ft_isdigit
+	karakter numerik bir karakterse 1 değilse 0 döndürür.
+----------------------------------------------------------------------
+*ft_isprint
+	gönderilen karakter ascii tablosunda yazdıralabilen bir karakterse 1 döndürür (32 ile 126 arası) değilse 0 döndürür
+----------------------------------------------------------------------
+*ft_itoa
+	itoa temel atoi nin tam tersidir. integar to ascii burda ilk olarak gönderilen int değerini char a çeviriyoruz bunun için temel olarak ondalık birimine ihtiyacımız var 
+	sonrasıdna karakter sayısı kadar yeri malloc ile ayırıp null kontrollerini yapıyoruz.
