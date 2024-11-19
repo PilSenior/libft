@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdlib.h>
+#include <stdlib.h>
 
 static int	ft_lennmb(int n, int sign)
 {
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 		sign = -1;
 	nmb = sign * nmb;
 	lennmb = ft_lennmb(nmb, sign);
-	str = (char *)malloc(sizeof(char) * lennmb + 1);
+	str = (char *)malloc(sizeof(char) * (lennmb + 1));
 	if (!str)
 		return (0);
 	str[lennmb] = '\0';
@@ -54,10 +54,4 @@ char	*ft_itoa(int n)
 	if (sign == -1)
 		str[0] = '-';
 	return (str);
-}
-#include <stdio.h>
-int main()
-{
-	int a = 100;
-	printf("%s", ft_itoa(a));
 }
