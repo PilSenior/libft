@@ -1,5 +1,5 @@
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SRC = $(shell find . -name "ft_*.c")
 OBJ = $(SRC:.c=.o)
 
@@ -7,9 +7,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
-
-%.o: %.c
-	cc $(FLAGS) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
